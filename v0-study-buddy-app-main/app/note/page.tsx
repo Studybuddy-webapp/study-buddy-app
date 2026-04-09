@@ -2,7 +2,7 @@ import { Suspense } from "react"
 import { AppSidebar } from "@/components/app-sidebar"
 import { NoteContent } from "@/components/note-content"
 
-function NotePageContent() {
+function NoteInner() {
   return <NoteContent />
 }
 
@@ -11,8 +11,8 @@ export default function NotePage() {
     <div className="min-h-screen bg-background">
       <AppSidebar />
       <main className="pl-64">
-        <Suspense fallback={<div className="p-8">Loading...</div>}>
-          <NotePageContent />
+        <Suspense fallback={<div>Loading...</div>}>
+          <NoteInner />
         </Suspense>
       </main>
     </div>
